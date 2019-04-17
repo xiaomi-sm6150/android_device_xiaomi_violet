@@ -11,6 +11,9 @@ DEVICE_PATH := device/xiaomi/violet
 # Inherit from sm6150-common
 -include device/xiaomi/sm6150-common/BoardConfigCommon.mk
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
+
 # Platform
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno612
 
