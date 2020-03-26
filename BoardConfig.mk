@@ -17,6 +17,9 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
 # Platform
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno612
 
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
 # Inherit from proprietary files
 include vendor/xiaomi/violet/BoardConfigVendor.mk
 
