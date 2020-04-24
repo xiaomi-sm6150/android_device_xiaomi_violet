@@ -50,3 +50,8 @@ PRODUCT_COPY_FILES += \
 # Protobuf
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full-vendorcompat
+
+# Wifi
+PRODUCT_PACKAGES += \
+    VioletWifiOverlay
+
