@@ -263,7 +263,10 @@ vendor/firmware/ipa_fws.elf
 vendor/firmware/ipa_fws.mdt
 
 # Sensors
+vendor/bin/hw/android.hardware.sensors@2.0-service
 vendor/bin/sensors.qti
+vendor/etc/init/android.hardware.sensors@2.0-service.rc
+vendor/lib64/android.hardware.sensors@2.0-impl.so
 vendor/etc/sensors/hals.conf
 vendor/lib64/libsensorcal.so
 vendor/lib64/libsensorslog.so
@@ -274,7 +277,7 @@ vendor/lib64/libssc.so
 vendor/lib64/libssc_default_listener.so
 vendor/lib64/sensors.ssc.so
 
-# Sensor configs
+# Sensor Configs
 vendor/etc/sensors/config/ak991x_dri_0.json
 vendor/etc/sensors/config/bma2x2_0.json
 vendor/etc/sensors/config/bme680_0.json
