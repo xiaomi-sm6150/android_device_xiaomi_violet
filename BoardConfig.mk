@@ -22,6 +22,9 @@ TARGET_KERNEL_CONFIG := violet_defconfig
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 
+# Display density
+TARGET_SCREEN_DENSITY := 410 ## smallest width 421dp
+
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
 
