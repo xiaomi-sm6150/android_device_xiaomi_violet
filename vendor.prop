@@ -2,3 +2,7 @@
 vendor.audio.feature.compr_voip.enable=true
 vendor.voice.path.for.pcm.voip=true
 ro.vendor.audio.sdk.fluencetype=fluence
+
+# Chipset
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=SDM6150
