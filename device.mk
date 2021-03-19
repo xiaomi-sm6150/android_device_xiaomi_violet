@@ -10,6 +10,9 @@ $(call inherit-product, device/xiaomi/sm6150-common/sm6150.mk)
 # Call the proprietary setup
 $(call inherit-product-if-exists, vendor/xiaomi/violet/violet-vendor.mk)
 
+# Product launched with 9.0
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
