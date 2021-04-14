@@ -11,6 +11,11 @@ DEVICE_PATH := device/xiaomi/violet
 # Inherit from sm6150-common
 -include device/xiaomi/sm6150-common/BoardConfigCommon.mk
 
+# Audio
+AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
+AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
+BOARD_USES_ALSA_AUDIO := true
+
 # Kernel
 TARGET_KERNEL_CONFIG := violet_defconfig
 
