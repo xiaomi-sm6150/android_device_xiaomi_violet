@@ -16,6 +16,9 @@ AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
 AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
 BOARD_USES_ALSA_AUDIO := true
 
+# Gestures
+TARGET_TAP_TO_WAKE_EVENT_NODE  := "/dev/input/event1"
+
 # Kernel
 TARGET_KERNEL_CONFIG := violet_defconfig
 
