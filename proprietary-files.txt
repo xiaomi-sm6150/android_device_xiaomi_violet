@@ -243,6 +243,9 @@ vendor/firmware/CAMERA_ICP.elf
 # Consumer IR
 vendor/lib64/hw/consumerir.default.so:vendor/lib64/hw/consumerir.sm6150.so
 
+# DRM L1 - from Redmi Note 7 Pro V12.5.1.0.QFHINXM
+vendor/lib64/liboemcrypto.so|2cee717b25559030a61709e826b4a5dae6043c20
+
 # Fingerprint
 vendor/lib64/com.fingerprints.extension@2.0.so
 vendor/lib64/hw/fingerprint.fpc.default.so
