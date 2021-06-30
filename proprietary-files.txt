@@ -15,6 +15,16 @@ vendor/etc/acdbdata/adsp_avs_config.acdb
 # Audio (speaker amplifier) firmware
 vendor/firmware/tas2563_uCDSP.bin
 
+# Audio libraries
+vendor/lib/btaudio_offload_if.so
+vendor/lib/libacdb-fts.so
+vendor/lib/libacdbloader.so
+vendor/lib/libacdbrtac.so
+vendor/lib/libadiertac.so
+vendor/lib/libadm.so
+vendor/lib/libaudcal.so
+vendor/lib/libqtigef.so
+
 # Camera
 vendor/etc/camera/beauty_ui9_intelligent_params.config
 vendor/etc/camera/eyelineblush.cng
