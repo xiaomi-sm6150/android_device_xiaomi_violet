@@ -13,15 +13,15 @@ vendor/etc/acdbdata/adsp_avs_config.acdb
 # Audio (speaker amplifier) firmware
 vendor/firmware/tas2563_uCDSP.bin
 
-# Audio libraries
-vendor/lib/btaudio_offload_if.so
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbrtac.so
-vendor/lib/libadiertac.so
-vendor/lib/libadm.so
-vendor/lib/libaudcal.so
-vendor/lib/libqtigef.so
+# Audio libraries - from sweet user 11 RKQ1.200826.002 V12.5.1.0.RKFMIXM release keys
+vendor/lib/btaudio_offload_if.so|d02bff9f3c73f6d42773551fe8400851c2be2795
+vendor/lib/libacdb-fts.so|bcc6c8bcde57f0db0d9ab5c4da9180e2cc164a54
+vendor/lib/libacdbloader.so|f6a0d8821bcb0fef8ef0732aae608f448dfcdbaa
+vendor/lib/libacdbrtac.so|589040d995e6f162f0cf902e2090079788ed8813
+vendor/lib/libadiertac.so|73335648211c57fa3debec6d2bb46f967c9b3fc2
+vendor/lib/libadm.so|c5d8693dbec640d3366ad7620833b2e4387f3c01
+vendor/lib/libaudcal.so|f4d718f9b9a56ba87f8bf17057b8c3682ac5779b
+vendor/lib/libqtigef.so|c5ef533558ccc78e179f0a940eb4b8c2dd9377e3
 
 # Camera
 vendor/etc/camera/beauty_ui9_intelligent_params.config
