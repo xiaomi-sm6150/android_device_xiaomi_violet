@@ -5,4 +5,4 @@ ro.vendor.audio.sdk.fluencetype=fluence
 
 # Chipset
 ro.soc.manufacturer=Qualcomm
-ro.soc.model=SDM6150
+ro.soc.model=SM6150
