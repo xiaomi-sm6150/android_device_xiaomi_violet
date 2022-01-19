@@ -26,6 +26,8 @@
 #
 
 on early-boot
+    # IPA
+    write /dev/ipa 1
 
     # Sensors
     write /sys/kernel/boot_slpi/boot 1
