@@ -1,3 +1,5 @@
+# These proprietary files are extracted from Redmi Note 7 Pro (codenamed `violet`) MIUI V12.5.4.0.QFHCNXM, unless pinned
+
 # ACDB
 vendor/etc/acdbdata/IDP/IDP_Bluetooth_cal.acdb
 vendor/etc/acdbdata/IDP/IDP_Codec_cal.acdb
