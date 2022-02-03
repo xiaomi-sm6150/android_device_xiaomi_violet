@@ -7,6 +7,9 @@
 
 function blob_fixup() {
     case "${1}" in
+        vendor/lib64/hw/camera.qcom.so)
+            sed -i "s|libc++.so|libc29.so|g" "${2}"
+            ;;
         vendor/lib64/libvendor.goodix.hardware.interfaces.biometrics.fingerprint@2.1.so)
             patchelf --remove-needed "libhidlbase.so" "${2}"
             sed -i "s/libhidltransport.so/libhidlbase-v32.so\x00/" "${2}"
