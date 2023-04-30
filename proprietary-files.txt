@@ -132,6 +132,7 @@ vendor/lib64/camera/com.qti.tuned.sunny_s5k2l7.bin
 vendor/lib64/camera/com.qti.tuned.sunny_s5k5e8.bin
 vendor/lib64/camera/com.qti.tuned.sunny_s5k5e9yu05.bin
 vendor/lib64/camera/com.qti.tuned.truly_ov8856.bin
+vendor/lib64/camera/components/GpuKernelRepo.pb
 -vendor/lib64/camera/components/com.arcsoft.node.capturebokeh.so
 -vendor/lib64/camera/components/com.arcsoft.node.hdr.so
 -vendor/lib64/camera/components/com.arcsoft.node.hdrchecker.so
@@ -177,7 +178,6 @@ vendor/lib64/camera/com.qti.tuned.truly_ov8856.bin
 -vendor/lib64/camera/components/com.vidhance.stats.aec_dmbr.so
 -vendor/lib64/camera/components/com.xiaomi.node.mibokeh.so
 -vendor/lib64/camera/components/com.xiaomi.node.misegment.so
-vendor/lib64/camera/components/GpuKernelRepo.pb
 -vendor/lib64/camera/components/libdepthmapwrapper.so
 -vendor/lib64/camera/components/libmmcamera_cac3.so
 vendor/lib64/camera/components/model_back.dlc
@@ -189,6 +189,10 @@ vendor/lib64/camera/fdconfigvideolite.bin
 -vendor/lib64/hw/camera.qcom.so
 -vendor/lib64/hw/com.qti.chi.override.so
 -vendor/lib64/hw/com.qti.chi.override_moorea.so
+-vendor/lib64/libFaceGrade.so
+-vendor/lib64/libSNPE.so
+-vendor/lib64/libVDSuperPhotoAPI.so
+-vendor/lib64/libXMFD_AgeGender.so
 -vendor/lib64/libarcsoft_beautyshot.so
 -vendor/lib64/libarcsoft_dualcam_refocus.so
 -vendor/lib64/libarcsoft_high_dynamic_range.so
@@ -206,8 +210,8 @@ vendor/lib64/camera/fdconfigvideolite.bin
 -vendor/lib64/libcamxtintlessalgo.so
 -vendor/lib64/libcom.qti.chinodeutils.so
 -vendor/lib64/libFaceGrade.so
--vendor/lib64/libmegface.so
 -vendor/lib64/libMegviiFacepp-0.5.2.so
+-vendor/lib64/libmegface.so
 -vendor/lib64/libmibokeh_660.so
 -vendor/lib64/libmmcamera_faceproc.so
 -vendor/lib64/libmmcamera_faceproc2.so
@@ -224,7 +228,6 @@ vendor/lib64/camera/fdconfigvideolite.bin
 -vendor/lib64/libscveObjectTracker_stub.so
 -vendor/lib64/libscvePanorama.so
 -vendor/lib64/libscvePanorama_lite.so
--vendor/lib64/libSNPE.so
 -vendor/lib64/libsns_device_mode_stub.so
 -vendor/lib64/libsns_fastRPC_util.so
 -vendor/lib64/libsns_low_lat_stream_stub.so
@@ -234,9 +237,7 @@ vendor/lib64/camera/fdconfigvideolite.bin
 -vendor/lib64/libswvdec.so
 -vendor/lib64/libsymphony-cpu.so
 -vendor/lib64/libsymphonypower.so
--vendor/lib64/libVDSuperPhotoAPI.so
 -vendor/lib64/libvidhance.so
--vendor/lib64/libXMFD_AgeGender.so
 vendor/lib64/mibokeh_660_opencl.bin
 
 # Camera Firmware
@@ -282,8 +283,8 @@ vendor/firmware/ipa_fws.mdt
 -vendor/bin/hw/android.hardware.sensors@2.0-service
 -vendor/bin/sensors.qti
 vendor/etc/init/android.hardware.sensors@2.0-service.rc
--vendor/lib64/android.hardware.sensors@2.0-impl.so
 vendor/etc/sensors/hals.conf
+-vendor/lib64/android.hardware.sensors@2.0-impl.so
 -vendor/lib64/libsensorcal.so
 -vendor/lib64/libsensorslog.so
 -vendor/lib64/libsns_fastRPC_util.so
@@ -308,12 +309,12 @@ vendor/etc/sensors/config/dps368_0.json
 vendor/etc/sensors/config/icp101xx_0.json
 vendor/etc/sensors/config/lsm6ds3_0.json
 vendor/etc/sensors/config/lsm6ds3c_0.json
+vendor/etc/sensors/config/lsm6dsm_0.json
 vendor/etc/sensors/config/lsm6dsm_0_16g.json
 vendor/etc/sensors/config/lsm6dsm_0_8g.json
-vendor/etc/sensors/config/lsm6dsm_0.json
+vendor/etc/sensors/config/lsm6dso_0.json
 vendor/etc/sensors/config/lsm6dso_0_16g.json
 vendor/etc/sensors/config/lsm6dso_0_8g.json
-vendor/etc/sensors/config/lsm6dso_0.json
 vendor/etc/sensors/config/ltr308_0_on_change.json
 vendor/etc/sensors/config/pah_8011_0_platform.ppg_enable_ex_1.json
 vendor/etc/sensors/config/pah_8011_0_platform.ppg_enable_ex_2.json
@@ -361,10 +362,10 @@ vendor/etc/sensors/sns_reg_config
 
 # Thermal
 -vendor/bin/thermal-engine
-vendor/etc/thermal-engine.conf
 vendor/etc/thermal-engine-camera.conf
 vendor/etc/thermal-engine-map.conf
 vendor/etc/thermal-engine-normal.conf
 vendor/etc/thermal-engine-studio.conf
 vendor/etc/thermal-engine-tgame.conf
+vendor/etc/thermal-engine.conf
 -vendor/lib64/libthermalfeature.so
