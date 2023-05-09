@@ -17,6 +17,8 @@ AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
 BOARD_USES_ALSA_AUDIO := true
 
 # Kernel
+BOARD_BOOTCONFIG += androidboot.boot_devices=soc/7c4000.sdhci
+BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/7c4000.sdhci
 TARGET_KERNEL_CONFIG := violet_defconfig
 
 # Recovery
