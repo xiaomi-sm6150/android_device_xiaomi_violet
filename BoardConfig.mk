@@ -24,9 +24,6 @@ TARGET_KERNEL_CONFIG := violet_defconfig
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
-# Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
-
 # Display density
 TARGET_SCREEN_DENSITY := 410 ## smallest width 421dp
 
