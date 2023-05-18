@@ -17,7 +17,7 @@ AUDIO_FEATURE_ENABLED_INSTANCE_ID := true
 BOARD_USES_ALSA_AUDIO := true
 
 # Kernel
-TARGET_KERNEL_CONFIG := violet_defconfig
+TARGET_KERNEL_CONFIG += vendor/violet.config
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
