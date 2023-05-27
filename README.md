@@ -24,3 +24,4 @@ It was announced in February 2019 and released in March 2019.
 ![Xiaomi Redmi Note 7 Pro](https://moven.bg/img/cms/Redmi%20note%207/5.jpg)
 
 Copyright (C) 2020 Paranoid Android.
+Copyright (C) 2023 The LineageOS Project
