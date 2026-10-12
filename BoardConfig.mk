@@ -26,7 +26,7 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=emmc
 
-TARGET_KERNEL_CONFIG += vendor/violet.config
+TARGET_KERNEL_CONFIG := violet_defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x04000000
