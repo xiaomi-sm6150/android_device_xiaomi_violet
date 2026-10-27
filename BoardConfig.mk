@@ -28,6 +28,9 @@ BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=emmc
 
 TARGET_KERNEL_CONFIG := violet_defconfig
 
+# MiuiCamera
+-include vendor/miuicamera-sweet/BoardConfig.mk
+
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x04000000
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456

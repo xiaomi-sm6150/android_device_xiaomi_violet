@@ -58,6 +58,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
 
+# MiuiCamera
+$(call inherit-product-if-exists, vendor/miuicamera-sweet/device.mk)
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
