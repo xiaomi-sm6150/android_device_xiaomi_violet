@@ -8,9 +8,9 @@
     "target_path": "kernel/xiaomi/sm6150"
   },
   {
-    "repository": "TheMuppets/proprietary_vendor_xiaomi_violet",
+    "repository": "xiaomi-sm6150/proprietary_vendor_xiaomi_violet",
     "target_path": "vendor/xiaomi/violet",
-    "branch": "lineage-23.2"
+    "branch": "seventeen"
   },
   {
     "repository": "xiaomi-sm6150/proprietary_vendor_miuicamera-sweet",
