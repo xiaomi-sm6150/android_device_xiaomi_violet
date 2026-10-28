@@ -13,8 +13,7 @@
     "branch": "seventeen"
   },
   {
-    "repository": "xiaomi-sm6150/proprietary_vendor_miuicamera-sweet",
-    "target_path": "vendor/miuicamera-sweet",
-    "branch": "seventeen/violet"
+    "repository": "xiaomi-sm6150/proprietary_vendor_miuicamera-violet",
+    "target_path": "vendor/miuicamera-violet"
   }
 ]

@@ -59,7 +59,7 @@ PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
 
 # MiuiCamera
-$(call inherit-product-if-exists, vendor/miuicamera-sweet/device.mk)
+$(call inherit-product-if-exists, vendor/miuicamera-violet/device.mk)
 
 PRODUCT_SYSTEM_PROPERTIES += \
     ro.product.mod_device=violet_global
