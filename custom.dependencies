@@ -4,13 +4,9 @@
     "target_path": "device/xiaomi/sm6150-common"
   },
   {
-    "repository": "xiaomi-sm6150/android_kernel_xiaomi_sm6150",
-    "target_path": "kernel/xiaomi/sm6150"
-  },
-  {
-    "repository": "xiaomi-sm6150/proprietary_vendor_xiaomi_violet",
+    "repository": "NoPrincessHere/proprietary_vendor_xiaomi_violet",
     "target_path": "vendor/xiaomi/violet",
-    "branch": "seventeen"
+    "remote": "gitlab"
   },
   {
     "repository": "xiaomi-sm6150/proprietary_vendor_miuicamera-violet",
