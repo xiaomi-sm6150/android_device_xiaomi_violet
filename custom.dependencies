@@ -13,8 +13,8 @@
     "branch": "lineage-23.2"
   },
   {
-    "remote": "gitlab",
-    "repository": "NoPrincessHere/proprietary_vendor_miuicamera-sweet",
-    "target_path": "vendor/miuicamera-sweet"
+    "repository": "xiaomi-sm6150/proprietary_vendor_miuicamera-sweet",
+    "target_path": "vendor/miuicamera-sweet",
+    "branch": "seventeen/violet"
   }
 ]

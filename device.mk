@@ -61,6 +61,9 @@ PRODUCT_PACKAGES += \
 # MiuiCamera
 $(call inherit-product-if-exists, vendor/miuicamera-sweet/device.mk)
 
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.product.mod_device=violet_global
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
