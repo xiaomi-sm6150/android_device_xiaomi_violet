@@ -33,3 +33,12 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     SystemName=violet
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# RisingOS flags
+RISING_MAINTAINER := wtf-luffy, Sexyoggy
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Snapdragon 675" \
+    RisingMaintainer="wtf-luffy, Sexyoggy"
+TARGET_ENABLE_BLUR := true
+PRODUCT_NO_CAMERA := false
+WITH_GMS := true
