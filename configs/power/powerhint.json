@@ -397,7 +397,18 @@
       "Duration": 0,
       "Value": "2597"
     },
-    {
+{
+"PowerHint": "INTERACTION",
+"Node": "CPUBigClusterMinFreq",
+"Duration": 0,
+"Value": "1209600"
+},
+{
+"PowerHint": "INTERACTION",
+"Node": "GPUMinFreq",
+"Duration": 0,
+"Value": "3"
+},    {
       "PowerHint": "LAUNCH",
       "Node": "ForegroundCpuset",
       "Duration": 5000,
