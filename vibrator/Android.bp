@@ -1,0 +1,24 @@
+//
+// SPDX-FileCopyrightText: 2026 The PixelOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_binary {
+    name: "android.hardware.vibrator-service.violet",
+    vendor: true,
+    relative_install_path: "hw",
+    init_rc: ["android.hardware.vibrator-service.violet.rc"],
+    vintf_fragments: ["android.hardware.vibrator-service.violet.xml"],
+    srcs: [
+        "VibratorWrapper.cpp",
+        "service.cpp",
+    ],
+    shared_libs: [
+        "android.hardware.vibrator-V2-ndk",
+        "libbase",
+        "libbinder_ndk",
+        "liblog",
+        "vendor.qti.hardware.vibrator.impl",
+    ],
+    overrides: ["vendor.qti.hardware.vibrator.service"],
+}

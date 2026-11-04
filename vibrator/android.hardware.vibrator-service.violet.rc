@@ -1,0 +1,11 @@
+service vendor.vibrator.violet /vendor/bin/hw/android.hardware.vibrator-service.violet
+    class hal
+    user system
+    group system input wakelock
+    capabilities BLOCK_SUSPEND
+
+on post-fs-data
+    write /sys/class/leds/vibrator/trigger "transient"
+    # Amplitude control reprograms the LDO voltage
+    chown system system /sys/class/leds/vibrator/vmax_mv
+    chmod 0664 /sys/class/leds/vibrator/vmax_mv

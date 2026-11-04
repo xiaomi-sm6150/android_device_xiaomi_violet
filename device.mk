@@ -86,6 +86,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator-service.violet
+
 # Wifi
 PRODUCT_PACKAGES += \
     VioletWifiOverlay
