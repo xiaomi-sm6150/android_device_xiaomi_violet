@@ -11,5 +11,10 @@
   {
     "repository": "xiaomi-sm6150/proprietary_vendor_miuicamera-violet",
     "target_path": "vendor/miuicamera-violet"
+  },
+  {
+    "repository": "NoPrincessHere/proprietary_vendor_oneplus_dolby",
+    "target_path": "vendor/oneplus/dolby",
+    "remote": "gitlab"
   }
 ]
