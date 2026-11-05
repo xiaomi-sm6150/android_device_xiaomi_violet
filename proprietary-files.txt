@@ -221,7 +221,6 @@ vendor/lib64/hw/camera.qcom.so
 vendor/lib64/hw/com.qti.chi.override.so
 vendor/lib64/hw/com.qti.chi.override_moorea.so
 vendor/lib64/libFaceGrade.so
-vendor/lib64/libSNPE.so
 vendor/lib64/libVDSuperPhotoAPI.so
 vendor/lib64/libXMFD_AgeGender.so
 vendor/lib64/libarcsoft_beautyshot.so
@@ -410,3 +409,6 @@ vendor/etc/thermal-engine-studio.conf
 vendor/etc/thermal-engine-tgame.conf
 vendor/etc/thermal-engine.conf
 vendor/lib64/libthermalfeature.so
+
+# SNPE - from thor, needed by the MIUI Camera clone mode (SNPEBuilder::setInitCacheMode)
+vendor/lib64/libSNPE.so|36fdd9aef0149520f665ff9947a7a2b872a512d5
