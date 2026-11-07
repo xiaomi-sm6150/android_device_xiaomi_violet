@@ -29,17 +29,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/mixer_paths_idp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_idp.xml \
     $(LOCAL_PATH)/configs/audio/sound_trigger_mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sound_trigger_mixer_paths.xml
 
-# Camera
-PRODUCT_PACKAGES += \
-    libc29.vendor
-
-# Fastbootd
-PRODUCT_PACKAGES += \
-    fastbootd
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    libhidlbase-v32.vendor
+# Display
+PRODUCT_COPY_FILES += \
+    $(call find-copy-subdir-files,qdcm_calib_data_*.xml,$(LOCAL_PATH)/qdcm/,$(TARGET_COPY_OUT_VENDOR)/etc/)
 
 # Init scripts
 PRODUCT_COPY_FILES += \
@@ -64,24 +56,22 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.xiaomi_sm6150
+    android.hardware.light-service.lineage
+
+# MiuiCamera
+$(call inherit-product-if-exists, vendor/miuicamera-violet/device.mk)
+
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.product.mod_device=violet_global
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-custom
 
 # Power
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-
-# RIL
-PRODUCT_PACKAGES += \
-    libprotobuf-cpp-full-vendorcompat
-
-# Sensor
-PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.0.vendor
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \

@@ -24,7 +24,7 @@
     <!-- Screen brightness used to dim the screen while dozing in a very low power state.
          May be less than the minimum allowed brightness setting
          that can be set by the user. -->
-    <integer name="config_screenBrightnessDoze">17</integer>
+    <item name="config_screenBrightnessDozeFloat" format="float" type="dimen">0.06667</item>
 
     <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">true</bool>
@@ -228,14 +228,6 @@
         <item>21</item>
         <item>500</item>
         <item>600</item>
-    </integer-array>
-
-    <!-- Vibrator pattern for feedback about hitting a scroll barrier -->
-    <integer-array name="config_scrollBarrierVibePattern">
-        <item>0</item>
-        <item>8</item>
-        <item>5</item>
-        <item>5</item>
     </integer-array>
 
     <!-- The bounding path of the cutout region of the main built-in display.

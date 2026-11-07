@@ -26,14 +26,16 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
 # Kernel
 BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=emmc
 
-TARGET_KERNEL_CONFIG += vendor/violet.config
+TARGET_KERNEL_CONFIG := violet_defconfig
+
+# MiuiCamera
+-include vendor/miuicamera-violet/BoardConfig.mk
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 0x04000000
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_DTBOIMG_PARTITION_SIZE := 0x0800000
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 57453555712
 
 BOARD_SUPER_PARTITION_CUST_DEVICE_SIZE := 872415232
 BOARD_SUPER_PARTITION_SYSTEM_DEVICE_SIZE := 3758096384
@@ -53,6 +55,9 @@ TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
 
 # Security
 VENDOR_SECURITY_PATCH := 2021-08-01
+
+# Sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Inherit from the proprietary version
 include vendor/xiaomi/violet/BoardConfigVendor.mk
