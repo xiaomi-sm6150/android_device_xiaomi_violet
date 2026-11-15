@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+    Mixer paths for the AOSP AIDL primary audio HAL (libaudioroute) on violet.
+    One path per HAL device, applied when a stream starts and reset when it goes to standby
+    (hardware/interfaces/audio/aidl/default/primary/StreamPrimary.cpp getRoutePath()).
+    The control names and values are the ones of the stock mixer_paths_idp.xml (same techpack).
+    Controls the running kernel does not have are skipped by libaudioroute.
+-->
+<mixer>
+    <!-- Speaker: TAS2563 on primary MI2S; the PCM the HAL opens is MultiMedia1 (card 0 dev 0). -->
+    <path name="playback-speaker">
+        <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia1" value="1" />
+        <ctl name="Amp Gain Volume" value="8" />
+    </path>
+
+    <!-- Wired headphones / headset: WCD937x HPH through RX_CDC_DMA_RX_0. -->
+    <path name="playback-headphones">
+        <ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia1" value="1" />
+        <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
+        <ctl name="RX_MACRO RX1 MUX" value="AIF1_PB" />
+        <ctl name="RX_CDC_DMA_RX_0 Channels" value="Two" />
+        <ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
+        <ctl name="RX INT1_1 MIX1 INP0" value="RX1" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX_COMP1 Switch" value="0" />
+        <ctl name="RX_COMP2 Switch" value="0" />
+        <ctl name="HPHL_COMP Switch" value="1" />
+        <ctl name="HPHR_COMP Switch" value="1" />
+        <ctl name="HPHL_RDAC Switch" value="1" />
+        <ctl name="HPHR_RDAC Switch" value="1" />
+    </path>
+
+    <!-- Capture: every mic goes through TX decoder 0 into TX_CDC_DMA_TX_3 (mono) and MultiMedia1. -->
+    <path name="capture-tx">
+        <ctl name="MultiMedia1 Mixer TX_CDC_DMA_TX_3" value="1" />
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="One" />
+        <ctl name="TX DEC0 MUX" value="SWR_MIC" />
+        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+    </path>
+
+    <!-- AMIC1 / ADC0: bottom mic -->
+    <path name="capture-mic-bottom">
+        <path name="capture-tx" />
+        <ctl name="TX SMIC MUX0" value="ADC0" />
+        <ctl name="ADC1_MIXER Switch" value="1" />
+    </path>
+
+    <!-- AMIC3 / ADC2 INP3: top mic -->
+    <path name="capture-mic-back">
+        <path name="capture-tx" />
+        <ctl name="TX SMIC MUX0" value="ADC2" />
+        <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="ADC2 MUX" value="INP3" />
+    </path>
+
+    <!-- AMIC2 / ADC2 INP2: headset mic -->
+    <path name="capture-headset-mic">
+        <path name="capture-tx" />
+        <ctl name="TX SMIC MUX0" value="ADC2" />
+        <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="ADC2 MUX" value="INP2" />
+    </path>
+</mixer>
