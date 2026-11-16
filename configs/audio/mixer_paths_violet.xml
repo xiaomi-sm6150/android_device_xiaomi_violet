@@ -84,25 +84,20 @@
     </path>
 
     <!--
-        Voice calls (VoiceCall.cpp): the VoiceMMode1 (card 0 dev 2, SIM 1) and VoiceMMode2 (dev 19,
-        SIM 2) front ends are both routed to one RX path and one TX path (the stock voicemmode1/2-call
-        paths plus the device paths); only the session the modem attaches to carries audio.
+        Voice calls (VoiceCall.cpp): device paths only. The VoiceMMode1/2 front end routing
+        (*_Voice Mixer VoiceMMode*, VoiceMMode*_Tx Mixer) is set by VoiceCall.cpp after these paths
+        and the calibration, like the stock HAL; libaudioroute would write it in control index order,
+        before the codec channel controls.
     -->
     <path name="voice-speaker">
-        <ctl name="PRI_MI2S_RX_Voice Mixer VoiceMMode1" value="1" />
-        <ctl name="PRI_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="Amp Gain Volume" value="8" />
     </path>
 
     <path name="voice-handset">
-        <ctl name="RX_CDC_DMA_RX_0_Voice Mixer VoiceMMode1" value="1" />
-        <ctl name="RX_CDC_DMA_RX_0_Voice Mixer VoiceMMode2" value="1" />
         <path name="handset-rx" />
     </path>
 
     <path name="voice-headphones">
-        <ctl name="RX_CDC_DMA_RX_0_Voice Mixer VoiceMMode1" value="1" />
-        <ctl name="RX_CDC_DMA_RX_0_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
         <ctl name="RX_MACRO RX1 MUX" value="AIF1_PB" />
         <ctl name="RX_CDC_DMA_RX_0 Channels" value="Two" />
@@ -115,8 +110,6 @@
     </path>
 
     <path name="voice-tx">
-        <ctl name="VoiceMMode1_Tx Mixer TX_CDC_DMA_TX_3_MMode1" value="1" />
-        <ctl name="VoiceMMode2_Tx Mixer TX_CDC_DMA_TX_3_MMode2" value="1" />
         <ctl name="TX_CDC_DMA_TX_3 Channels" value="One" />
         <ctl name="TX DEC0 MUX" value="SWR_MIC" />
         <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
