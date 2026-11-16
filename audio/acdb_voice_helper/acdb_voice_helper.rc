@@ -2,3 +2,11 @@ service vendor.audio.acdb_voice_helper /vendor/bin/acdb_voice_helper
     class hal
     user audioserver
     group audio system
+
+# The SIM of the voice calls, for the audio HAL (VoiceCall::voiceSessionMask): bit 0 = SIM 1
+# (VoiceMMode1), bit 1 = SIM 2 (VoiceMMode2). Vendor code may not read gsm.sim.state
+# (radio_prop); the IMS stack publishes its active subscription (0-based) as vendor.ims.activesub.
+on property:vendor.ims.activesub=0
+    setprop vendor.audio.voice.sim_mask 1
+on property:vendor.ims.activesub=1
+    setprop vendor.audio.voice.sim_mask 2
