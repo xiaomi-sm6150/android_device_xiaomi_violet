@@ -31,6 +31,21 @@
         <ctl name="HPHR_RDAC Switch" value="1" />
     </path>
 
+    <!-- Earpiece: WCD937x EAR through RX_CDC_DMA_RX_0 (stock "handset"). -->
+    <path name="handset-rx">
+        <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
+        <ctl name="RX_CDC_DMA_RX_0 Channels" value="One" />
+        <ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="EAR_RDAC Switch" value="1" />
+        <ctl name="RDAC3_MUX" value="RX1" />
+    </path>
+
+    <path name="playback-handset">
+        <ctl name="RX_CDC_DMA_RX_0 Audio Mixer MultiMedia1" value="1" />
+        <path name="handset-rx" />
+    </path>
+
     <!-- Capture: every mic goes through TX decoder 0 into TX_CDC_DMA_TX_3 (mono) and MultiMedia1. -->
     <path name="capture-tx">
         <ctl name="MultiMedia1 Mixer TX_CDC_DMA_TX_3" value="1" />
@@ -57,6 +72,53 @@
     <!-- AMIC2 / ADC2 INP2: headset mic -->
     <path name="capture-headset-mic">
         <path name="capture-tx" />
+        <ctl name="TX SMIC MUX0" value="ADC2" />
+        <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="ADC2 MUX" value="INP2" />
+    </path>
+
+    <!--
+        Voice calls (VoiceCall.cpp): the VoiceMMode1 front end (card 0 dev 2, hostless) is routed to
+        one RX path and one TX path, the stock voicemmode1-call paths plus the device paths.
+    -->
+    <path name="voice-speaker">
+        <ctl name="PRI_MI2S_RX_Voice Mixer VoiceMMode1" value="1" />
+        <ctl name="Amp Gain Volume" value="8" />
+    </path>
+
+    <path name="voice-handset">
+        <ctl name="RX_CDC_DMA_RX_0_Voice Mixer VoiceMMode1" value="1" />
+        <path name="handset-rx" />
+    </path>
+
+    <path name="voice-headphones">
+        <ctl name="RX_CDC_DMA_RX_0_Voice Mixer VoiceMMode1" value="1" />
+        <ctl name="RX_MACRO RX0 MUX" value="AIF1_PB" />
+        <ctl name="RX_MACRO RX1 MUX" value="AIF1_PB" />
+        <ctl name="RX_CDC_DMA_RX_0 Channels" value="Two" />
+        <ctl name="RX INT0_1 MIX1 INP0" value="RX0" />
+        <ctl name="RX INT1_1 MIX1 INP0" value="RX1" />
+        <ctl name="RX INT0 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
+        <ctl name="HPHL_RDAC Switch" value="1" />
+        <ctl name="HPHR_RDAC Switch" value="1" />
+    </path>
+
+    <path name="voice-tx">
+        <ctl name="VoiceMMode1_Tx Mixer TX_CDC_DMA_TX_3_MMode1" value="1" />
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="One" />
+        <ctl name="TX DEC0 MUX" value="SWR_MIC" />
+        <ctl name="TX_AIF1_CAP Mixer DEC0" value="1" />
+    </path>
+
+    <path name="voice-mic-bottom">
+        <path name="voice-tx" />
+        <ctl name="TX SMIC MUX0" value="ADC0" />
+        <ctl name="ADC1_MIXER Switch" value="1" />
+    </path>
+
+    <path name="voice-mic-headset">
+        <path name="voice-tx" />
         <ctl name="TX SMIC MUX0" value="ADC2" />
         <ctl name="ADC2_MIXER Switch" value="1" />
         <ctl name="ADC2 MUX" value="INP2" />
