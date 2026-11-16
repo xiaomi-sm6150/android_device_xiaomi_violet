@@ -7,6 +7,12 @@
     Controls the running kernel does not have are skipped by libaudioroute.
 -->
 <mixer>
+    <!-- Defaults: analog mic gains of the stock mixer_paths_idp.xml (the 4.14 kernel boots them at 0,
+         which leaves the call uplink and recordings ~18 dB too quiet). -->
+    <ctl name="ADC1 Volume" value="12" />
+    <ctl name="ADC2 Volume" value="12" />
+    <ctl name="ADC3 Volume" value="12" />
+
     <!-- Speaker: TAS2563 on primary MI2S; the PCM the HAL opens is MultiMedia1 (card 0 dev 0). -->
     <path name="playback-speaker">
         <ctl name="PRI_MI2S_RX Audio Mixer MultiMedia1" value="1" />
