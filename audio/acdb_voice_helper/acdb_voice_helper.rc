@@ -1,0 +1,4 @@
+service vendor.audio.acdb_voice_helper /vendor/bin/acdb_voice_helper
+    class hal
+    user audioserver
+    group audio system

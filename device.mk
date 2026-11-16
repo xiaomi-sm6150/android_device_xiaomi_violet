@@ -19,6 +19,7 @@ PRODUCT_SHIPPING_API_LEVEL := 28
 
 # Audio
 PRODUCT_PACKAGES += \
+    acdb_voice_helper \
     audio.primary.sm6150 \
     liba2dpoffload \
     libhdmiedid \

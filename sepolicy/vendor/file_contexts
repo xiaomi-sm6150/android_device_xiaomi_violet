@@ -1,2 +1,5 @@
 # Vibrator
 /vendor/bin/hw/android\.hardware\.vibrator-service\.violet    u:object_r:hal_vibrator_default_exec:s0
+
+# ACDB voice calibration helper of the AIDL audio HAL
+/vendor/bin/acdb_voice_helper    u:object_r:hal_audio_default_exec:s0

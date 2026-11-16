@@ -1,0 +1,21 @@
+//
+// SPDX-FileCopyrightText: 2026 The PixelOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Sends ACDB voice calibration for the AIDL audio HAL. libacdbloader ships only as a 32-bit
+// vendor library while the AIDL HAL is 64-bit, so this small 32-bit daemon (same SELinux domain
+// as the HAL) owns the ACDB session and serves calibration requests made through properties.
+cc_binary {
+    name: "acdb_voice_helper",
+    vendor: true,
+    compile_multilib: "32",
+    init_rc: ["acdb_voice_helper.rc"],
+    srcs: ["acdb_voice_helper.cpp"],
+    shared_libs: [
+        "libcutils",
+        "libdl",
+        "liblog",
+        "libtinyalsa",
+    ],
+}
