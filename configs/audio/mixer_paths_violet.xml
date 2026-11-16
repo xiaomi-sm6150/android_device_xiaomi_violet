@@ -128,6 +128,24 @@
         <ctl name="ADC1_MIXER Switch" value="1" />
     </path>
 
+    <!-- Dual mic endfire (stock handset-dmic-endfire / speaker-dmic-endfire): bottom AMIC1 on
+         DEC0, top AMIC3 (ADC2 INP3) on DEC1; ACDB VOICE_DMIC 41 / VOICE_SPEAKER_DMIC 43. -->
+    <path name="voice-dmic-ef">
+        <path name="voice-tx" />
+        <ctl name="TX_CDC_DMA_TX_3 Channels" value="Two" />
+        <ctl name="TX SMIC MUX0" value="ADC0" />
+        <ctl name="ADC1_MIXER Switch" value="1" />
+        <ctl name="TX DEC1 MUX" value="SWR_MIC" />
+        <ctl name="TX SMIC MUX1" value="ADC2" />
+        <ctl name="TX_AIF1_CAP Mixer DEC1" value="1" />
+        <ctl name="ADC2_MIXER Switch" value="1" />
+        <ctl name="ADC2 MUX" value="INP3" />
+    </path>
+
+    <path name="voice-speaker-dmic-ef">
+        <path name="voice-dmic-ef" />
+    </path>
+
     <path name="voice-mic-headset">
         <path name="voice-tx" />
         <ctl name="TX SMIC MUX0" value="ADC2" />
