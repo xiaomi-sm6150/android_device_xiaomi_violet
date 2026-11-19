@@ -61,3 +61,18 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 
 # Inherit from the proprietary version
 include vendor/xiaomi/violet/BoardConfigVendor.mk
+
+# Kernel: prebuilt 6.1 (kitkat ~/k61/wt-combo combo-wip, build-clean.sh)
+# with its own DTB and dtbo. The 4.14 source stays as TARGET_KERNEL_SOURCE
+# for the generated UAPI headers the vendor HALs build against.
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_PREBUILT_KERNEL := device/xiaomi/violet-kernel/Image.gz
+BOARD_PREBUILT_DTBIMAGE_DIR := device/xiaomi/violet-kernel/dtb
+BOARD_PREBUILT_DTBOIMAGE := device/xiaomi/violet-kernel/dtbo.img
+BOARD_KERNEL_SEPARATED_DTBO := false
+BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0
+BOARD_KERNEL_CMDLINE += service_locator.enable=1 lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE += loop.max_part=7 androidboot.fstab_suffix=emmc
+BOARD_KERNEL_CMDLINE += log_buf_len=4M audit=0 cpuidle.off=1
+BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware,/vendor/firmware_mnt/image
+BOARD_KERNEL_CMDLINE += androidboot.boot_devices=soc/7c4000.sdhci
