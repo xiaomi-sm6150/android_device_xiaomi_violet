@@ -23,11 +23,6 @@ TARGET_SCREEN_DENSITY := 440
 # HIDL
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest.xml
 
-# Kernel
-BOARD_KERNEL_CMDLINE += androidboot.fstab_suffix=emmc
-
-TARGET_KERNEL_CONFIG := violet_defconfig
-
 # MiuiCamera
 -include vendor/miuicamera-violet/BoardConfig.mk
 
@@ -62,12 +57,12 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 # Inherit from the proprietary version
 include vendor/xiaomi/violet/BoardConfigVendor.mk
 
-# Kernel: prebuilt 6.1 (kitkat ~/k61/wt-combo combo-wip, build-clean.sh)
-# with its own DTB and dtbo. The 4.14 source stays as TARGET_KERNEL_SOURCE
-# for the generated UAPI headers the vendor HALs build against.
-TARGET_FORCE_PREBUILT_KERNEL := true
-TARGET_PREBUILT_KERNEL := device/xiaomi/violet-kernel/Image.gz
-BOARD_PREBUILT_DTBIMAGE_DIR := device/xiaomi/violet-kernel/dtb
+# Kernel: 6.1, built from source with the default clang.
+# kernel/xiaomi/sm6150-6.1 is the 6.1 tree (combo-wip); its DTB is built
+# small enough for ABL (no full __symbols__). The dtbo stays a prebuilt stub.
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm6150-6.1
+TARGET_KERNEL_CONFIG := gki_defconfig vendor/violet.config
+TARGET_DTB_LIST_WILDCARD := vendor/qcom/violet-sm6150
 BOARD_PREBUILT_DTBOIMAGE := device/xiaomi/violet-kernel/dtbo.img
 BOARD_KERNEL_SEPARATED_DTBO := false
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom androidboot.console=ttyMSM0
